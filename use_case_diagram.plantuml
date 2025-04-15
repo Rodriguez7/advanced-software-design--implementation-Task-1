@@ -1,0 +1,16 @@
+@startuml
+left to right direction
+actor ProductOwner
+actor Developer
+actor ScrumMaster
+
+rectangle BacklogSystem {
+  ProductOwner -- (Add Backlog Item)
+  ProductOwner -- (Update Backlog Item)
+  ProductOwner -- (Assign Backlog Item to Release)
+  ProductOwner -- (Assign Backlog Item to Product)
+  Developer -- (View Backlog Item)
+  Developer -- (View Related Release Items)
+  ScrumMaster -- (Assign Backlog Item to Sprint)
+}
+@enduml

@@ -1,0 +1,43 @@
+@startuml
+class ProductBacklogItem {
+  - productID: String
+  - name: String
+  - description: String
+  + addBacklogItem()
+  + updateBacklogItem()
+  + assignBacklogItemToRelease()
+  + assignBacklogItemToProduct()
+  + assignBacklogItemToSprint()
+}
+
+class Task {
+  - releaseID: String
+  - springID: String
+  - name: String
+  - description: String
+  - assignee: Person
+  - status: Status
+  - priority: Priority
+}
+
+class Person {
+  - name: String
+  - email: String
+}
+
+enum Status {
+  OPEN
+  IN_PROGRESS
+  COMPLETED
+  BLOCKED
+}
+
+enum Priority {
+  HIGH
+  MEDIUM
+  LOW
+}
+
+ProductBacklogItem "1" -- "*" Task : contains
+Task -- Person : assigned to
+@enduml
